@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Django CRM</title>
+        <link rel="stylesheet" href="http://127.0.0.1/design/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://127.0.0.1/icons-pack/css/fontawesome.min.css">
+        <link rel="stylesheet" href="http://127.0.0.1/icons-pack/css/solid.min.css">
+    </head>
+    <body>
+        {% comment %} opening django tag to pull stuff from other pages {% endcomment %}
+        {% include 'navbar.html' %}
+        <div class="container">
+            <br/>
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" 
+                role="alert">
+                    <strong>{{ message }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            {% endif %}
+            {% block content %}
+            {% endblock %}
+        </div>
+        {% comment %} closing django tag {% endcomment %}
+        <script src="http://127.0.0.1/icons-pack/js/solid.min.js"></script>
+        <script src="http://127.0.0.1/icons-pack/js/fontawesome.min.js"></script>
+        <script src="http://127.0.0.1/design/js/bootstrap.min.js"></script>
+    </body>
+</html>
